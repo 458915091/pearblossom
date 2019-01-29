@@ -1,0 +1,137 @@
+{% extends 'blog/base.html'%}
+{% load static %}
+{% block title %}
+	<title>个人中心</title>
+	<link rel="stylesheet" href="{% static "blog/css/center.css" %}">
+{% endblock %}
+
+{% block js %}
+	<script src="{% static "blog/js/center.js" %}"></script>
+{% endblock %}
+
+{% block body %}
+<div class="center">
+	<div class="menu">
+		<li class="menu_informations activate"><span></span><p>个人信息</p></li>
+		<li class="menu_edit"><span></span><p>编辑信息</p></li>
+		<li class="menu_head"><span></span><p>头像设置</p></li>
+		<li class="menu_center"><span></span><p>博客设置</p></li>
+	</div>
+	<div class="select one">
+		<div class="informations">
+			<p class="title">个人信息:</p>
+			<div class="content">
+				<div class="left">
+					<p>
+						{% if request.user.user_imformations.head %}
+							<img src="/media/{{ request.user.user_imformations.head }}" class="face">
+						{% else %}
+							<img src="{% static "blog/image/head.jpg" %}" class="face">
+						{% endif %}
+					</p>
+					<p class="text_for_head">当前头像</p>
+				</div>
+				<div class="right">
+					<p class="span">用户名：</p><p class="span_content">{{ user.username }}</p>
+					<p class="span">昵称：</p><p class="span_content">{{ user.user_imformations.name }}</p>
+					<p class="span">性别：</p><p class="span_content">{{ user.user_imformations.gender }}</p>
+					<p class="span">生日：</p><p class="span_content">{{ user.user_imformations.birthday }}</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="informations">
+			<p class="title">编辑资料:</p>
+			<div class="content">
+				<form action="" method="POST">
+					{% csrf_token %}
+					<div>
+						<p class="span">用户名：</p>
+						<p class="span_content">{{ user.username }}</p>
+						<input type="text" name="username" value="{{ user.username }}" style="display:none">
+					</div>
+					<div>
+						<p class="span">昵称：</p>
+						<input type="text" name="name" value="{{ user.user_imformations.name }}" placeholder="--请在此处填写你的昵称--">
+					</div>
+					<div>
+						<p class="span">性别：</p>
+						{% if user.user_imformations.gender == '男' %}
+						<select name="gender" id="id_blog_type">
+							<option value="0">- - - - - - - - - -</option>
+							<option value="1" selected="selected">男</option>
+							<option value="2">女</option>
+							<option value="3">保密</option>
+						</select>
+						{% elif user.user_imformations.gender == '女' %}
+						<select name="gender" id="id_blog_type">
+							<option value="0">- - - - - - - - - -</option>
+							<option value="1">男</option>
+							<option value="2" selected="selected">女</option>
+							<option value="3">保密</option>
+						</select>
+						{% elif user.user_imformations.gender == '保密' %}
+						<select name="gender" id="id_blog_type">
+							<option value="0">- - - - - - - - - -</option>
+							<option value="1">男</option>
+							<option value="2">女</option>
+							<option value="3" selected="selected">保密</option>
+						</select>
+						{% else %}
+						<select name="gender" id="id_blog_type">
+							<option value="0" selected="selected">- - - - - - - - - -</option>
+							<option value="1">男</option>
+							<option value="2">女</option>
+							<option value="3">保密</option>
+						</select>
+						{% endif %}
+					</div>
+					<div><p class="span">生日：</p><input type="date" name="birthday" value="{{ user.user_imformations.birthday|date:'Y-m-d' }}" placeholder="--请在此处填写你的生日--"></div>
+					
+					<div class="form-group button">
+						<button class="submit" type="submit">确认</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="informations">
+			<p class="title">头像设置:</p>
+			<div class="content">
+				<div class="left">
+					<p>
+						{% if request.user.user_imformations.head %}
+							<img src="/media/{{ request.user.user_imformations.head }}" class="face">
+						{% else %}
+							<img src="{% static "blog/image/head.jpg" %}" class="face">
+						{% endif %}
+					</p>
+					<p class="text_for_head">当前头像</p>
+				</div>
+				<div class="right">
+					<label id="file_input" for="file_input">
+						<i></i>
+						<span class="before">选择图片</span>
+						<span class="after">重新选择</span>
+					</label>
+				</div>
+				<form action="" method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<input class="imgfile" name="avatar" type="file" style="display:none" accept="image/*" />
+					<button class="update" type="submit">更新</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="informations">
+			<p class="title">博客设置:</p>
+			<div class="content">
+				<p class="span">用户名：</p><p class="span_content">{{ user.username }}</p>
+				<p class="span">昵称：</p><p class="span_content">{{ user.user_imformations.name }}</p>
+				<p class="span">性别：</p><p class="span_content">{{ user.user_imformations.gender }}</p>
+				<p class="span">生日：</p><p class="span_content">{{ user.user_imformations.birthday }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

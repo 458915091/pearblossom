@@ -1,0 +1,102 @@
+.body .login{
+	width: 1080px;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 20px 40px 20px 40px;
+    background-color: rgba(255,255,255,0.5);
+	box-shadow: 0 7px 20px #172027;
+	border-radius: 4px 4px 0 0; 
+}
+.body .login p.title{
+	display: block;
+	width: 540px;
+	margin: 0 auto;
+	margin-bottom: 32px;
+	font-size: 24px;
+}
+.body .login .error-list{
+    position: absolute;
+    width: 1080px;
+	height: 30px;
+    margin-top: -31px;
+	background: rgba(255,255,255, 0.5);
+}
+.body .login .error-group{
+	padding-left: 332px; 
+}
+.body .login .error-group .error_title{
+	float: left;
+	color: #8B4513;
+	line-height: 30px;
+}
+.body .login .error-group .errorlist{
+	float: left;
+	padding: 0;
+}
+.body .login .error-group .errorlist:not(:nth-child(2)){
+	padding-left: 10px;
+}
+.body .login .error-group .errorlist li{
+	list-style: none;
+	color: red;
+	line-height: 30px;
+}
+.body .login form{
+	width: 450px;
+	margin: 0 auto;
+}
+.body .login .form-group{
+	margin-bottom: 20px;
+}
+.body .login .form-group label{
+	display: block;
+	width: 90px;
+	float: left;
+	text-align: right;
+}
+.body .login .error label{
+	color: red;
+}
+.body .login .input{
+	margin-left: 90px;
+	padding-left: 50px;
+}
+.body .login input{
+	width: 180px;
+	height: 25px;
+	padding-left: 10px;
+	border: 0px;
+	border-radius: 4px;
+}
+.body .login .button{
+    width: 320px;
+	height: 38px;
+	margin-top: 40px;
+}
+.body .login .button a{
+	display: block;
+	width: 184px;
+    height: 36px;
+    color: #555;
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    line-height: 38px;
+    font-size: 13px;
+    background: #D3D3D3;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+.body .login .button button{
+	display: block;
+	width: 105px;
+    height: 38px;
+    color: #555;
+    float: right;
+    text-decoration: none;
+    text-align: center;
+    line-height: 38px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}

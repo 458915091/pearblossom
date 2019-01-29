@@ -1,0 +1,78 @@
+.body{
+	margin-bottom: 57px;
+}
+.body .add{
+	width: 1160px;
+	margin: 0 auto;
+	margin-top: 20px;
+	box-shadow: 0 7px 20px #172027;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 4px;
+}
+.body .add p.title{
+	padding: 20px 40px 0 40px ;
+	font-size: 24px;
+}
+.body .add form.add_content{
+	padding: 20px 40px 40px 40px;
+}
+.body .add form.add_content li{
+	list-style: none;
+}
+.body .add form.add_content li:not(:nth-child(4)){
+	float: left;
+}
+.body .add form.add_content li.select{
+	width: 780px;
+	padding-left: 40px;
+	margin-bottom: 20px;
+}
+.body .add form.add_content li p{
+	margin-bottom: 10px;
+}
+.body .add .title{
+	width: 260px;
+	/*margin: 0;*/
+}
+.body .add .title input{
+	width: 230px;
+    height: 25px;
+	margin-bottom: 10px;
+    padding-left: 30px;
+	border: 0;
+    border-radius: 4px;
+}
+.body .add .content textarea{
+	width: 650px;
+	height: 230px;
+	margin-bottom: 10px;
+	border: 0;
+    border-radius: 4px;
+	font-size: 13px;
+}
+.body .add .submit{
+	width: 184px;
+	float: left;
+}
+.body .add .submit .add-button{
+	width: 184px;
+	height: 38px;
+	color: #555;
+	border: 1px solid #ccc;
+    border-radius: 2px;
+}
+.body .add #id_blog_type{
+	width: 145px;
+	height: 28px;
+	padding-left: 10px;
+	border: 0;
+	border-radius: 4px;
+}
+.error{
+	color: red;
+	width: 250px;
+	height: 38px;
+	margin-left: 184px;
+	text-align: center;
+	line-height: 38px;
+}

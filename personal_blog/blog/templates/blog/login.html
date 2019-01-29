@@ -1,0 +1,42 @@
+{% extends 'blog/base.html'%}
+{% load static %}
+{% block title %}
+	<title>欢迎登陆！</title>
+	<link rel="stylesheet" href="{% static "blog/css/login.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="login">
+	<p class="title">登陆:</p>
+	{% if errors %}
+		<div class="error-list">
+			<div class="error-group">
+				<p class="error_title">错误提示：</p>
+				<ul class="errorlist">
+					<li>{{ errors }}</li>
+				</ul>
+			</div>
+		</div>
+	{% endif %}
+
+	<form action="" method="POST">
+		{% csrf_token %}
+		<div class="form-group {% if form.username.errors %}error{% endif %}">
+			<label for="username" class="username">用户名*：</label>
+			<div class="input">
+				{{ form.username }}
+			</div>
+		</div>
+		<div class="form-group {% if form.password.errors %}error{% endif %}">
+			<label for="password" class="password">密码*：</label>
+			<div class="input">
+				{{ form.password }}
+			</div>
+		</div>
+		<div class="form-group button">
+			<a href="{% url "blog:register" %}" class="jump">未有账号 点此注册</a>
+			<button class="submit" type="submit">登陆</button>
+		</div>
+	</form>
+</div>
+{% endblock %}

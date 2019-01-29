@@ -1,0 +1,33 @@
+
+.body .detail{
+	width: 1160px;
+	margin: 0 auto;
+	box-shadow: 0 7px 20px #172027;
+}
+.body .detail-head{
+	margin-top: 20px;
+    padding: 20px 20px 30px 20px;
+    background-color: rgba(255,255,255,0.5);
+	border-radius: 4px 4px 0 0; 
+	border-bottom: 1px solid black;
+}
+.body .detail-head .title{
+	font-size: 24px;
+	font-weight: bolder;
+	margin-bottom: 10px;
+}
+.body .detail-head p:not(:nth-child(1)){
+	font-size: 14px;
+	color: #545353;
+	float: left;
+	margin-right: 10px;
+}
+
+.body .detail-content{
+	margin-top: 1px;
+	margin-bottom: 20px; 
+	padding: 20px;
+    background-color: rgba(255,255,255,0.5);
+	border-top: 0;
+	border-radius: 0 0 4px 4px; 
+}

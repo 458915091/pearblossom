@@ -1,0 +1,183 @@
+.body .center{
+	width: 1080px;
+	height: 300px;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 20px 40px 50px 40px;
+    background-color: rgba(255,255,255,0.5);
+	box-shadow: 0 7px 20px #172027;
+	border-radius: 4px 4px 0 0; 
+}
+.body .center .menu{
+	float: left;
+	width: 148px;
+	height: 300px;
+	padding-top: 40px;
+	border-right: 2px solid #e5e9ef;
+}
+.body .center .menu li.activate span{
+	background: #00a1d6;
+}
+.body .center .menu li span{
+	float: left;
+	width: 8px;
+	height: 8px;
+	margin-top: 14px;
+    margin-left: 30px;
+	background: white;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+.body .center .menu li{
+	cursor: pointer;
+	list-style: none;
+	width: 128px;
+	height: 40px;
+	margin-bottom: 10px;
+	padding-right: 20px;
+	font-size: 15px;
+	text-align: right;
+	line-height: 40px;
+	/*background: rgba(59, 95, 192, 0.5);*/
+	background: rgba(255,255,255,0.5);
+	border-radius: 5px 0 0 5px;
+}
+
+.body .center .one .informations:not(:nth-child(1)){
+	display: none;
+}
+.body .center .two .informations:not(:nth-child(2)){
+	display: none;
+}
+.body .center .three .informations:not(:nth-child(3)){
+	display: none;
+}
+.body .center .four .informations:not(:nth-child(4)){
+	display: none;
+}
+
+.body .center p.title{
+	display: block;
+	width: 755px;
+	margin: 0 auto;
+	margin-bottom: 32px;
+	font-size: 24px;
+}
+.body .center .content{
+	width: 645px;
+	margin: 0 auto;
+}
+.body .center .content .left{
+	width: 235px;
+    height: 182px;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-right: 1px solid #e5e9ef;
+}
+.body .center .content .right{
+	width: 322px;
+    height: 182px;
+    float: right;
+	margin-top: 10px;
+    margin-bottom: 20px;
+}
+.body .center .content p, .body .center .content input, .body .center .content select{
+	line-height: 27px;
+	margin-bottom: 20px;
+}
+.body .center .content p img.face{
+	padding: 5px 60px 0 60px;
+	width: 100px;
+    height: 100px;
+    border: 0 solid #ccc;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+.body .center .content p.text_for_head{
+	padding-left: 75px;
+    margin-top: -15px;
+}
+.body .center .content button.update{
+	display: block;
+    width: 288px;
+    height: 38px;
+    color: #555;
+    margin-left: 110px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 38px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+.body .center .content .span{
+	float: left;
+	width: 65px;
+	height: 27px;
+	padding-right: 50px;
+	text-align: right;
+}
+.body .center .content .span_content{
+	height: 27px;
+}
+.body .center .content input, .body .center .content select{
+	width: 180px;
+    height: 27px;
+    padding-left: 10px;
+    border: 0px;
+    border-radius: 4px;
+}
+.body .center .content select{
+	width: 190px;
+}
+.body .center .informations{
+	float: left;
+	width: 930px;
+}
+.form-group button{
+	display: block;
+    width: 288px;
+    height: 38px;
+    color: #555;
+    margin-left: 17px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 38px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.body .center .informations #file_input{
+    cursor: pointer;
+    background: rgba(255,255,255,0.5);
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    border: 1px solid #e5e9ef;
+    border-radius: 4px;
+    transition: all .6s;
+}
+.body .center .informations #file_input i{
+    margin: 52px auto 0;
+    width: 54px;
+    height: 46px;
+    display: block;
+    background: url('../image/updata.png');
+    background-size: 100%;
+}
+.body .center .informations #file_input span{
+    display: block;
+    text-align: center;
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
+    color: #6d757a;
+    line-height: 20px;
+    margin-top: 10px;
+    padding: 0 12px;
+    letter-spacing: 0;
+}
+.body .center .informations #file_input span.after{
+    display: none;
+}

@@ -1,0 +1,132 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}
+	<title>首页-个人博客</title>
+	<link rel="stylesheet" href="{% static "blog/css/home.css" %}">
+{% endblock %}
+
+{% block js %}
+	<script src="{% static "blog/js/home.js" %}"></script>
+{% endblock %}
+
+{% block show %}
+	<div class="show">
+		<div class="carousel">
+		{% for item in carousel %}
+		<ul class="carousel_content">
+			<li class="c1"><img src="{{ item.image1.url }}" alt="c1"></li>
+			<li class="c2"><img src="{{ item.image2.url }}" alt="c2"></li>
+			<li class="c3"><img src="{{ item.image3.url }}" alt="c3"></li>
+			<li class="c4"><img src="{{ item.image4.url }}" alt="c4"></li>
+		</ul>
+		<ul class="carousel_title">
+			<li class="t1 on"><a href="">{{ item.title1 }}</a></li>
+			<li class="t2"><a href="">{{ item.title2 }}</a></li>
+			<li class="t3"><a href="">{{ item.title3 }}</a></li>
+			<li class="t4"><a href="">{{ item.title4 }}</a></li>
+		</ul>
+		<ul class="carousel_point">
+			<span class="p1 on"></span>
+			<span class="p2"></span>
+			<span class="p3"></span>
+			<span class="p4"></span>
+		</ul>
+		{% endfor %}
+		</div>
+
+		<div class="publicity">
+			{% for item in publicity %}
+			<ul class="publicity_content top">
+				<li class="p1">
+					<a href="">{{ item.title1 }}</a>
+					<img src="{{ item.image1.url }}" alt="p1">
+				</li>
+				<li class="p2">
+					<a href="">{{ item.title2 }}</a>
+					<img src="{{ item.image2.url }}" alt="p2">
+				</li>
+				<li class="p3">
+					<a href="">{{ item.title3 }}</a>
+					<img src="{{ item.image3.url }}" alt="p3">
+				</li>
+				<li class="p4">
+					<a href="">{{ item.title4 }}</a>
+					<img src="{{ item.image4.url }}" alt="p4">
+				</li>
+				<li class="p5">
+					<a href="">{{ item.title5 }}</a>
+					<img src="{{ item.image1.url }}" alt="p5">
+				</li>
+				<li class="p6">
+					<a href="">{{ item.title6 }}</a>
+					<img src="{{ item.image2.url }}" alt="p6">
+				</li>
+				<li class="p7">
+					<a href="">{{ item.title7 }}</a>
+					<img src="{{ item.image3.url }}" alt="p7">
+				</li>
+				<li class="p8">
+					<a href="">{{ item.title8 }}</a>
+					<img src="{{ item.image4.url }}" alt="p8">
+				</li>
+			</ul>
+			{% endfor %}
+		</div>
+		
+	</div>
+{% endblock %}
+
+{% block blog_face %}
+	<img src={% static "blog/image/akari.jpg" %} class="face">
+	<span></span>
+{% endblock %}
+
+{% block body %}
+	<div class="new body-item">
+		<div>
+			<span></span>
+			<p>最新博客：</p>
+		</div>
+
+		<ul>
+			{% for item in new %}
+			<li>
+				<span>{{ forloop.counter }}</span>
+				<a href="{% url "blog:detail" item.author item.num %}"><p>{{ item.title }}</p></a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<div class="ranking body-item">
+		<div>
+			<span></span>
+			<p>博客排行：</p>
+		</div>
+
+		<ul>
+			{% for item in ranking %}
+			<li>
+				<span>{{ forloop.counter }}</span>
+				<a href="{% url "blog:detail" item.author item.num %}"><p>{{ item.title }}</p></a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<div class="random body-item">
+		<div>
+			<span></span>
+			<p>随机博客：</p>
+		</div>
+
+		<ul>
+			{% for item in random %}
+			<li>
+				<span>{{ forloop.counter }}</span>
+				<a href="{% url "blog:detail" item.author item.num %}"><p>{{ item.title }}</p></a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

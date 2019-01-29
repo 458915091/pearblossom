@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}
+	<title>添加新随笔</title>
+	<link rel="stylesheet" href="{% static "blog/css/add.css" %}">
+{% endblock %}
+
+{% block body %}
+	<div class="add">
+		<p class="title">新随笔：</p>
+		<form class="add_content" action="" method="POST">
+			{% csrf_token %}
+			<li class="title">
+				<p>标题：</p>
+				<input type="text" name="title" maxlength="20" placeholder="--- 在此处输入你的标题 ---" value="{{ title }}">
+			</li>
+			<li class="select">
+				<p>类型：</p>
+				<select name="blog_type" id="id_blog_type">
+					<option value="0">- - - - - - - - - -</option>
+					{% for item in type %}
+					<option value="{{ forloop.counter }}">{{ item.type_name }}</option>
+					{% endfor %}
+				</select>
+			</li>
+			<li class="content">
+				<p>内容：</p>
+				<textarea name="content">{{ content }}</textarea>
+			</li>
+			<div class="submit">
+				<a class="add-submit" href="">
+					<button class="add-button" type="submit">发布</button>
+				</a>
+			</div>
+			<div class="error">
+				<p class="error_message">{{ error }}</p>
+			</div>
+		</form>
+	</div>
+{% endblock %}

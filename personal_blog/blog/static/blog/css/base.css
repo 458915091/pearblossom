@@ -1,0 +1,317 @@
+*{
+	margin: 0;
+	font-family: 'OpenSans-Regular';
+}
+body{
+	background:url("../image/764939.png") no-repeat;
+	/*background-size: 110%*/
+	background-attachment:fixed;
+	background-size: 1500px auto;
+}
+.head {
+	width: auto;
+	height: 140px;
+	background-size: 110% !important;
+	background-position-x: -83px !important;
+    /*background-position-y: -207px;*/
+}
+.head .nav-bar{
+	height: 43px;
+	/*background-color: hsla(0, 0%, 100%, .4);*/
+	/*border: 1px solid #ccc;*/
+}
+.head .nav-bar .nav-content{
+	position: absolute;
+	width: 100%;
+	height: 43px;
+}
+.head .nav-bar ul.nav-left{
+	float: left;
+}
+.head .nav-bar div.nav-right{
+	float: right;
+	height: 43px;
+}
+.head .nav-bar li{
+	list-style: none;
+	float: left;
+	height: 43px;
+}
+.head .nav-left li:hover{
+	background-color: hsla(0, 0%, 100%, .5)
+}
+.head .nav-bar .nav-left li a{
+	text-decoration: none;
+	line-height: 43px;
+	padding: 8px;
+	color: black;
+	font-size: 10px;
+}
+.head .nav-bar .nav-content .nav-right a.blog_ation{
+	display: block;
+}
+.head .nav-bar .nav-content .nav-right .blog_face{
+	position: absolute;
+	top: 3px;
+    right: 10%;
+	width: 36px;
+	height: 36px;
+	transition: all 0.5s;
+	z-index: 5;
+}
+.head .nav-bar .nav-content .nav-right:hover > a > .activate{
+	width: 64px;
+	height: 64px;
+    right: 8.8%;
+	top: 8px;
+}
+.head .nav-bar .nav-content .nav-right .blog_face img{
+	width: 100%;
+	height: 100%;
+	border: 0 solid #ccc;
+	border-radius: 50%; 
+}
+
+.head .nav-bar .nav-bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 43px;
+	background-size: 110% !important;
+	background-position-x: -83px !important;
+	filter: blur(4px);
+}
+.head .nav-bar .nav-mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 43px;
+	background-color: hsla(0, 0%, 100%, .4);
+	box-shadow: 0 2px 2px rgba(0,0,0,.1);
+}
+
+.head .nav-bar .nav-content .nav-right:hover > .blog_user{
+	visibility: visible;
+	opacity: 1;
+	top: 43px;
+}
+.head .blog_user{
+	visibility: hidden;
+	position: relative;
+	width: 260px;
+	top: 48px;
+	right: 10%;
+	padding-top: 35px; 
+	background: rgba(255,255,255,0.8);
+	border-radius: 0 0 4px 4px;
+	z-index: 4;
+	opacity: 0;
+	transition: all .3s;
+}
+.head .blog_user .user-head{
+	padding-bottom: 10px;
+}
+.head .blog_user .user-head p.user{
+	text-align: center;
+}
+.head .blog_user .user-body{
+	padding: 10px 20px 40px 20px;
+	border-top: 1px solid #e5e9ef; 
+}
+.head .blog_user .user-body li a{
+	text-decoration: none;
+}
+.head .blog_user .user-body li a:hover > p{
+	color: #00a1d6;
+}
+.head .blog_user .user-body li a p{
+	font-size: 10px;
+	color: black;
+}
+.head .blog_user .user-foot{
+	display: block;
+	height: 30px;
+}
+.head .blog_user .user-foot a{
+	display: block;
+	float: right;
+	width: 26px;
+	height: 30px;
+	text-decoration: none;
+	line-height: 30px;
+	color: black;
+	font-size: 13px;
+	padding-right: 20px;
+}
+.head .blog_user .user-foot a:hover{
+	color: #00a1d6;
+}
+.head .default{
+	width: 340px;
+	padding: 10px;
+}
+.head .blog_user .default-head p.top{
+	font-size: 13px;
+	padding-bottom: 10px;
+}
+.head .blog_user .default-body{
+	position: relative;
+	overflow: hidden;
+	height: 200px;
+	background: url('../image/731739.png') no-repeat;
+	background-size: 100%;
+}
+.head .blog_user .default-body img{
+	position: absolute;
+	width: 340px!important;
+	height: 200px!important;
+	float: left;
+}
+.head .blog_user .default-body img.two{
+	left: 340px;
+}
+.head .blog_user .default-foot a.login{
+	display: block;
+	margin-top: 10px;
+	width: 340px;
+    height: 43px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 43px;
+    background: #00a1d6;
+    border: 0;
+    border-radius: 4px;
+}
+.head .blog_user .default-foot a.login:hover{
+	background:#00b5e5
+}
+.head .blog_user .default-foot p.login-foot{
+	margin-top: 10px;
+	text-align: center;
+	font-size: 12px;
+}
+.head .blog_user .default-foot p.login-foot a{
+	text-decoration: none;
+	color: #00a1d6;
+}
+.head .blog_user .default-foot p.login-foot a:hover{
+	color: #96ccde;
+}
+
+
+.jump_menu{
+	/*background: white;*/
+    /*box-shadow: 0 7px 20px #172027;*/
+    margin-bottom: 10px;
+}
+.jump_menu .menu-shadow{
+	width: 1260px;
+	margin: 0 auto;
+	box-shadow: 0 7px 20px #172027;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 4px;
+}
+.jump_menu .blog_name{
+	width: 1160px;
+	height: 43px;
+	padding: 0;
+	margin: 0 auto;
+	/*border-bottom: 2px solid #ddd;*/
+}
+.jump_menu .blog_name li{
+	list-style: none;
+	float: left;
+	width: 96px;
+	height: 43px;
+}
+.jump_menu .blog_name li a{
+	text-decoration: none;
+	display: block;
+	color: black;
+	height: 43px;
+	line-height: 43px;
+}
+.jump_menu .blog_name li a p{
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+    margin-top: 4px;
+}
+.jump_menu .blog_name li a span{
+	width: 50px;
+	height: 21px;
+	border-radius: 1px;
+}
+
+.jump_menu .blog_name li a span:before{
+	content: url('../image/home.png');
+	display: block;
+	width: 33px;
+	height: 21px;
+	margin: 0 auto;
+	margin-top: -4px;
+}
+.jump_menu .blog_name li:nth-child(2) a span:before{
+	content: url('../image/cnblogs.png');
+}
+.jump_menu .blog_name li:nth-child(3) a span:before{
+	content: url('../image/csdn.png');
+}
+.jump_menu .blog_name li:nth-child(4) a span:before{
+	content: url('../image/BOKEE.png');
+}
+.jump_menu .blog_name li:nth-child(5) a span:before{
+	content: url('../image/tech2ipo.png');
+}
+.jump_menu .blog_name li:nth-child(6) a span:before{
+	content: url('../image/sina.png');
+}
+.jump_menu .blog_name li:nth-child(7) a span:before{
+	content: url('../image/lofter.png');
+}
+.jump_menu .blog_name li:nth-child(8) a span:before{
+	content: url('../image/51cto.png');
+}
+.jump_menu .blog_name li:nth-child(9) a span:before{
+	content: url('../image/36kr.png');
+}
+.jump_menu .blog_name li:nth-child(10) a span:before{
+	content: url('../image/blogchina.png');
+}
+.jump_menu .blog_name li:nth-child(11) a span:before{
+	content: url('../image/alibuybuy.png');
+}
+.jump_menu .blog_name li:nth-child(12) a span:before{
+	content: url('../image/github.png');
+}
+
+.404error{
+	font-size: 30px;
+	color: red;
+	text-align: center;
+	margin-top: 50px; 
+}
+
+.foot{
+	position: fixed;
+	width: 100%;
+	height: 34px;
+	bottom: 0;
+	text-align: center;
+	/*background: url("../image/960181.jpg");*/
+	/*background-size: 110%;*/
+	/*background-position-x: -80px; */
+	/*background-position-y: 70px;*/
+	/*border-top: 1px solid white;*/
+	box-shadow: 7px 7px 20px #172027;
+}
+.foot p{
+	color: white;
+	font-size: 12px;
+	line-height: 34px;
+}

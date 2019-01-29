@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}
+	{# <title>{{ detail.author| capfirst }}-{{ detail.num }}</title> #}
+	<title>{{ detail.title| capfirst }}</title>
+	<link rel="stylesheet" href="{% static "blog/css/detail.css" %}">
+{% endblock %}
+
+{% block body%}
+	<div class="detail">
+		<div class="detail-head">
+			<p class="title">{{ detail.title| capfirst }}</p>
+			<p class="time">{{ detail.create_time| date:"Y年m月d日 H:i:s" }}</p>
+			<p class="author">作者：{{ detail.author| capfirst }}</p>
+			<p class="clicks">阅读：{{ detail.clicks }}次</p>
+		</div>
+
+		<div class="detail-content">
+			<p class="content">{{ detail.content| linebreaksbr }}</p>
+		</div>
+	</div>
+{% endblock %}

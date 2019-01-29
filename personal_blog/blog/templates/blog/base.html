@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	{% block title %}
+	<title>base</title>
+	{% endblock %}
+	<link rel="stylesheet" href="{% static "blog/css/base.css" %}">
+	<link rel="icon" type="image/x-icon" href="{% static "blog/image/personal_blog.ico" %}">
+	<script src="{% static "blog/js/jquery-3.3.1.min.js" %}"></script>
+	{% block js %}
+	{% endblock %}
+</head>
+<body>
+	<div class="head">
+		<div class="nav-bar">
+			<div class="nav-bg"></div>
+			<div class="nav-mask"></div>
+			<div class="nav-content">
+				<ul class="nav-left">
+					<li><a href="{% url "blog:home" %}">首页</a></li>
+					<li><a href="">我的博客</a></li>
+					<li><a href="{% url "blog:add" %}">新随笔</a></li>
+					<li><a href="{% url "blog:center" %}">个人中心</a></li>
+				</ul>
+				<div class="nav-right">
+					{% if user.is_authenticated %}
+					<a class="blog_ation" href="{% url "blog:center" %}">
+						<div class="{% if user.authenticated %} activate {% else %} blog_face {% endif %}">
+							{% if request.user.user_imformations.head %}
+								<img src="/media/{{ request.user.user_imformations.head }}" class="face">
+							{% else %}
+								<img src="{% static "blog/image/head.jpg" %}" class="face">
+							{% endif %}
+						</div>
+					</a>
+					<div class="blog_user">
+						<div class="user-head">
+							<p class="user">{{ user }}</p>
+						</div>
+						<div class="user-body">
+							<li class="center"><a href="{% url "blog:center" %}"><span></span><p>个人中心</p></a></li>
+						</div>
+						<div class="user-foot">
+							<a href="{% url 'blog:logout' %}">退出</a>
+						</div>
+					</div>
+					{% else %}
+					<a class="blog_ation" href="{% url "blog:login" %}">
+						<div class="{% if user.authenticated %} activate {% else %} blog_face {% endif %}">
+							<img src={% static "blog/image/akari.jpg" %} class="face">
+						</div>
+					</a>
+					<div class="blog_user default">
+						<div class="default-head">
+							<p class="top">登陆后你可以：</p>
+						</div>
+						<div class="default-body">
+							<img class="one" src="{% static "blog/image/blog_user.png" %}" alt="one">
+							<img class="two" src="{% static "blog/image/blog_user.png" %}" alt="two">
+						</div>
+						<div class="default-foot">
+							<a href="{% url "blog:login" %}" class="login">登陆</a>
+							<p class='login-foot'>
+								<span>首次使用？</span>
+								<a href="{% url "blog:register" %}">点我去注册</a>
+							</p>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="jump_menu">
+		<div class="menu-shadow">
+			<ul class="blog_name">
+				<li><a href="{% url "blog:home" %}"><span></span><p>首页</p></a></li>
+				<li><a href="https://www.cnblogs.com/"><span></span><p>博客园</p></a></li>
+				<li><a href="https://www.csdn.net/"><span></span><p>CSDN</p></a></li>
+				<li><a href="http://www.bokee.com/"><span></span><p>BOKEE</p></a></li>
+				<li><a href="http://tech2ipo.com/"><span></span><p>Tech2IPO</p></a></li>
+				<li><a href="http://blog.sina.com.cn/"><span></span><p>新浪博客</p></a></li>
+				<li><a href="http://www.lofter.com/"><span></span><p>网易博客</p></a></li>
+				<li><a href="http://www.51cto.com/"><span></span><p>51-CTO</p></a></li>
+				<li><a href="https://36kr.com/"><span></span><p>36氪</p></a></li>
+				<li><a href="http://www.blogchina.com/"><span></span><p>博客中国</p></a></li>
+				<li><a href="http://www.alibuybuy.com/"><span></span><p>那点事</p></a></li>
+				<li><a href="https://github.com/"><span></span><p>GitHub</p></a></li>
+			</ul>
+		</div>
+	</div>
+
+	{% block show %}
+		
+	{% endblock %}
+
+	<div class="body">
+		{% block body%}
+		{% endblock %}
+	</div>
+
+	<div class="foot">
+		<p>Copyright ©2018 personal_blog</p>
+	</div>
+</body>
+</html>
